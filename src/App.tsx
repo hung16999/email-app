@@ -1,4 +1,10 @@
-import { BrowserRouter, Switch, Route, NavLink } from "react-router-dom";
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+  NavLink,
+  Redirect,
+} from "react-router-dom";
 import "./App.css";
 
 import { routesMain } from "./routes/routes";
@@ -13,14 +19,17 @@ const App = () => {
           {route.name}
         </NavLink>
       ))}
+      <div className="container">
+        <Switch>
+          {routesMain.map((route) => (
+            <Route key={route.name} exact={route.exact} path={route.path}>
+              {route.Component}
+            </Route>
+          ))}
+        </Switch>
+      </div>
 
-      <Switch>
-        {routesMain.map((route) => (
-          <Route key={route.name} exact={route.exact} path={route.path}>
-            {route.Component}
-          </Route>
-        ))}
-      </Switch>
+      <Redirect to="/messages" />
     </BrowserRouter>
   );
 };

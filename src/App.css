@@ -1,1 +1,6 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
+
+.table-message {
+  height: 400px;
+  overflow: scroll;
+}
