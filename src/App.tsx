@@ -1,27 +1,25 @@
-import React from "react";
-import { BrowserRouter, Link, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, NavLink } from "react-router-dom";
 import "./App.css";
-import { Contacts } from "./components/Contacts";
-import { Messages } from "./components/Messages";
-import { Preferences } from "./components/Preferences";
+
+import { routesMain } from "./routes/routes";
+
+import "./App.css";
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Link to="/messages">Messages</Link>
-      <Link to="/contacts">Contacts</Link>
-      <Link to="/preferences">Preferences</Link>
+      {routesMain.map((route) => (
+        <NavLink key={route.name} to={route.path} className="me-5">
+          {route.name}
+        </NavLink>
+      ))}
 
       <Switch>
-        <Route exact path="/messages">
-          <Messages />
-        </Route>
-        <Route path="/contacts">
-          <Contacts />
-        </Route>
-        <Route path="/preferences">
-          <Preferences />
-        </Route>
+        {routesMain.map((route) => (
+          <Route key={route.name} exact={route.exact} path={route.path}>
+            {route.Component}
+          </Route>
+        ))}
       </Switch>
     </BrowserRouter>
   );

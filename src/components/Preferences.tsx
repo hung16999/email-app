@@ -3,7 +3,7 @@ import React from "react";
 export const Preferences = () => {
   return (
     <>
-      <h3>Preferences</h3>
+      <h1>This page is under construction</h1>
     </>
   );
 };
