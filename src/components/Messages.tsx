@@ -1,18 +1,12 @@
 import React from "react";
 
-import { MessagesBox } from "./MessagesBox";
-import { MessagesPreview } from "./MessagesPreview";
-import { MessagesDetail } from "./MessageDetail";
+import MessagesBox from "./MessagesBox";
 
-export const Messages = () => {
+const Messages = () => {
   return (
     <>
-      <div className="d-flex">
-        <MessagesBox />
-        <MessagesPreview />
-      </div>
-
-      <MessagesDetail />
+      <MessagesBox />
     </>
   );
 };
+export default Messages;

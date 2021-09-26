@@ -1,7 +1,7 @@
 import { ComponentType } from "react";
-import { Messages } from "../components/Messages";
-import { Contacts } from "../components/Contacts";
-import { Preferences } from "../components/Preferences";
+import Messages from "../components/Messages";
+import Contacts from "../components/Contacts";
+import Preferences from "../components/Preferences";
 
 export interface TypeRoute {
   path: string;

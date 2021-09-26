@@ -5,7 +5,6 @@ import {
   NavLink,
   Redirect,
 } from "react-router-dom";
-import "./App.css";
 
 import { routesMain } from "./routes/routes";
 
@@ -26,10 +25,10 @@ const App = () => {
               {route.Component}
             </Route>
           ))}
+
+          <Redirect to="/messages/inbox" />
         </Switch>
       </div>
-
-      <Redirect to="/messages" />
     </BrowserRouter>
   );
 };
